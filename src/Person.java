@@ -1,5 +1,3 @@
-package com.company;
-
 public class Person {
     private String name; //Поле не может быть null, Строка не может быть пустой
     private java.time.ZonedDateTime birthday; //Поле может быть null
