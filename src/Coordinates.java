@@ -1,4 +1,4 @@
 public class Coordinates {
-    private double x;
-    private long y; //Значение поля должно быть больше -324
+    private double x; //Значение поля должно быть больше -992
+    private double y; //Значение поля должно быть больше -120
 }
