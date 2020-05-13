@@ -71,7 +71,7 @@
       <workItem from="1586938983179" duration="165000" />
       <workItem from="1586939665376" duration="3450000" />
       <workItem from="1589303054679" duration="4726000" />
-      <workItem from="1589352456424" duration="2418000" />
+      <workItem from="1589352456424" duration="2685000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1589308146639</created>
@@ -108,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589356531757</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="TESTING">
+      <created>1589356799892</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1589356799892</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +139,8 @@
     <MESSAGE value="task changes" />
     <MESSAGE value="wtf is going on" />
     <MESSAGE value="is it even working?" />
-    <option name="LAST_COMMIT_MESSAGE" value="is it even working?" />
+    <MESSAGE value="TESTING" />
+    <option name="LAST_COMMIT_MESSAGE" value="TESTING" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="73" key="#Deployment" timestamp="1589355908919">
@@ -143,17 +151,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="898" y="217" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589356764957" />
-    <state x="762" y="9" key="CommitChangelistDialog2" timestamp="1589356530427">
+    <state x="762" y="9" key="CommitChangelistDialog2" timestamp="1589356798717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="762" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589356530427" />
+    <state x="762" y="9" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589356798717" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589352482669">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589352482669" />
-    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589355931774">
+    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589356829196">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589355931774" />
+    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589356829196" />
   </component>
 </project>
