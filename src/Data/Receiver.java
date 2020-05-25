@@ -62,6 +62,12 @@ public class Receiver {
         collection.get(id).setCreationDate(temp);
     }
 
+    public void removeMap(Long id){
+        collection.remove(id);
+    }
+
+
+
     /**
      * Getters and setters
      */
