@@ -1,5 +1,6 @@
 package Data;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -52,7 +53,14 @@ public class Receiver {
             }
             else { break; }
         }
-    };
+    }
+
+    public void update(Long id){
+        LocalDate temp = collection.get(id).getCreationDate();
+        collection.remove(id);
+        insert(id);
+        collection.get(id).setCreationDate(temp);
+    }
 
     /**
      * Getters and setters

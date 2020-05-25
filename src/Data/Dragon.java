@@ -43,16 +43,43 @@ public class Dragon {
         this.description = sc.nextLine();
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public void setCoordinates(long x, Long y) {
         coordinates = new Coordinates(x, y);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCreationDate() {
+        this.creationDate = LocalDate.now();
+    }
+
+    public void setCreationDate(LocalDate date) {
+        this.creationDate = date;
+    }
+
+    public LocalDate getCreationDate(){
+        return creationDate;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setWingspan(Integer wingspan) {
+        this.wingspan = wingspan;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setKiller(Person killer) {
+        this.killer = killer;
     }
 }
