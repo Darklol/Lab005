@@ -1,6 +1,7 @@
 package Commands;
 
 import Data.Invoker;
+import Data.Receiver;
 
 public abstract class Command {
     /** абстрактный класс команды
@@ -8,6 +9,7 @@ public abstract class Command {
      * @param Invoker
      */
     private Invoker invoker;
+    private Receiver receiver;
 
     public abstract void execute();
 

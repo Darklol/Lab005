@@ -33,14 +33,35 @@ public class Dragon {
     public Dragon(long id){
         this.id = id;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите имя дракона:");
+        /*System.out.println("Введите имя дракона:");
         this.name = (sc.nextLine());
         System.out.println("Введите координаты дракона:");
         setCoordinates(Long.parseLong(sc.nextLine()), Long.parseLong(sc.nextLine()));
         System.out.println("Введите возраст дракона:");
-        this.age = (Integer.parseInt(sc.nextLine()));
+        this.age = (Integer.parseInt(sc.nextLine()));*/
         System.out.println("Введите описание дракона: ");
         this.description = sc.nextLine();
+        this.killer = new Person();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Person getKiller() {
+        return killer;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getValue(){
+        return age+wingspan+42;
     }
 
     public void setCoordinates(long x, Long y) {

@@ -1,4 +1,5 @@
 import Data.Dragon;
+import Data.Person;
 import Data.Receiver;
 
 import java.util.Hashtable;
@@ -16,8 +17,11 @@ public class Main {
         receiver.setInitializationDate();
 
         receiver.insert((long)1);
+        receiver.insert((long)5);
         receiver.insert((long)2);
-        receiver.show();
+        receiver.insert((long)4);
+
+        receiver.printFieldAscendDesc();
 
     }
 }
