@@ -1,5 +1,14 @@
 package Data;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.sun.xml.internal.ws.developer.SerializationFeature;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
+
+import java.io.*;
+import java.lang.reflect.Type;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.*;
@@ -98,7 +107,32 @@ public class Receiver {
      * Метод для реализации команды save
      */
     public void save(){
-        //TBD
+        try {
+            Gson gson = new Gson();
+            String string = gson.toJson(collection);
+            File file = new File("gson.json");
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(string);
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getFile(){
+        try {
+            String string = "";
+            Scanner scanner = new Scanner(new File("gson.json"));
+            while (scanner.hasNextLine()){
+                string = string + scanner.nextLine();
+            }
+            Gson gson = new Gson();
+            Type collectionType = new TypeToken<Hashtable<Long,Dragon>>(){}.getType();
+            collection = gson.fromJson(string, collectionType);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -122,7 +156,7 @@ public class Receiver {
     public void removeGreater(Long id){
         List<Dragon> list = Collections.list(collection.elements());
         for (Dragon dragon : list){
-            if (dragon.getValue() > collection.get(id).getValue()){
+            if (dragon.makeValue() > collection.get(id).makeValue()){
                 long idToRemove = dragon.getId();
                 remove(idToRemove);
             }
@@ -152,7 +186,7 @@ public class Receiver {
      */
     public void replaceGreater(Long id){
         Dragon dragon = new Dragon(id);
-        if (dragon.getValue()>collection.get(id).getValue()){
+        if (dragon.makeValue()>collection.get(id).makeValue()){
             System.out.println("Введённое значение больше имеющегося");
             collection.remove(id);
             collection.put(id,dragon);
@@ -225,4 +259,6 @@ public class Receiver {
     public void setCollection(Hashtable<Long, Dragon> collection) {
         this.collection = collection;
     }
+
+
 }

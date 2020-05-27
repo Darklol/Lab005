@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="894ad3b6-323a-439c-87b2-5d7ef986f688" name="Default Changelist" comment="remove template created">
+    <list default="true" id="894ad3b6-323a-439c-87b2-5d7ef986f688" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/file.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gson.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-core-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-core-asl-1.9.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-jaxrs-1.9.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jackson-mapper-asl-1.9.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab005.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab005.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Dragon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Receiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -40,11 +46,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
@@ -89,7 +100,9 @@
       <workItem from="1590340112216" duration="6004000" />
       <workItem from="1590388277880" duration="6497000" />
       <workItem from="1590399075167" duration="14099000" />
-      <workItem from="1590472854026" duration="13745000" />
+      <workItem from="1590472854026" duration="13908000" />
+      <workItem from="1590516229655" duration="4782000" />
+      <workItem from="1590559475781" duration="8618000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1589308146639</created>
@@ -161,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590412878263</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Almost all command templates done&#10;&#10;Invoker preparing to cast a sunstrike&#10;&#10;still 0 exceptions">
+      <created>1590495551986</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590495551986</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +201,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first steps" />
     <MESSAGE value="task changes" />
     <MESSAGE value="wtf is going on" />
@@ -190,7 +211,8 @@
     <MESSAGE value="Command classes deleted&#10;&#10;Command changed&#10;&#10;Dragon got a constructor (not full)&#10;&#10;Added commands Insert, Show, Info&#10;&#10;All according to command pattern" />
     <MESSAGE value="update command created" />
     <MESSAGE value="remove template created" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove template created" />
+    <MESSAGE value="Almost all command templates done&#10;&#10;Invoker preparing to cast a sunstrike&#10;&#10;still 0 exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost all command templates done&#10;&#10;Invoker preparing to cast a sunstrike&#10;&#10;still 0 exceptions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="73" key="#Deployment" timestamp="1589355908919">
@@ -205,41 +227,53 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="898" y="217" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589356764957" />
-    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1590493645782">
+    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1590562688905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590493645782" />
-    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590479884116">
+    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590562688905" />
+    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590495550719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590479884116" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1590493863526">
+    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590495550719" />
+    <state x="473" y="153" key="FileChooserDialogImpl" timestamp="1590517854972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590493863526" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1590493863526">
+    <state x="473" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590517854972" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1590568333531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590493863526" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1590493863526">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590568333531" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1590568333530">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590493863526" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1590493863526">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590568333530" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1590568333530">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590493863526" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590407821193">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590568333530" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1590568333531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590407821193" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590475056166">
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590568333531" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1590565591363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590475056166" />
-    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589356829196">
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590565591363" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590495588534">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589356829196" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590495588534" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590570098521">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590570098521" />
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590565496439">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1590565496439" />
+    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590566632874">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="946" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590566632874" />
   </component>
 </project>

@@ -21,7 +21,10 @@ public class Main {
         receiver.insert((long)2);
         receiver.insert((long)4);
 
-        receiver.printFieldAscendDesc();
-
+        System.out.println(receiver.getCollection());
+        receiver.show();
+        receiver.getFile();
+        System.out.println(receiver.getCollection());
+        receiver.show();
     }
 }
