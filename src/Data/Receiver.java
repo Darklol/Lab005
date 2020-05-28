@@ -26,13 +26,23 @@ public class Receiver {
     public Receiver() {
         setInitializationDate();
         collection = new Hashtable<Long, Dragon>();
+        System.out.println("Welcome, User!");
     }
 
     /**
-     * Метод для реализации команды Help TBD
+     * Метод для реализации команды Help
      */
     public void help() {
-        //TBD
+        Invoker invoker = new Invoker();
+        Iterator<String> nameIterator = invoker.getCommandsName().keySet().iterator();
+        Iterator<String> manualIterator = invoker.getCommandsName().keySet().iterator();
+        System.out.println("Описание всех доступных команд:");
+        while (nameIterator.hasNext()) {
+            String name = invoker.getCommandsName().get(nameIterator.next()).commandName();
+            String manual = invoker.getCommandsName().get(manualIterator.next()).manual();
+            System.out.println(name + ": " + manual);
+        }
+
     }
 
     /**
@@ -43,6 +53,7 @@ public class Receiver {
         System.out.println("Коллекция типа: Hashtable");
         System.out.println("Дата инициализации: " + getInitializationDate());
         System.out.println("Количество элементов: " + collection.size() + "\n");
+        System.out.println();
         // TBD
     }
 
@@ -50,10 +61,14 @@ public class Receiver {
      * Метод для реализации команды show
      */
     public void show() {
-        System.out.println("Элементы коллекции:");
-        Iterator<Dragon> iterator = collection.values().iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next().toString());
+        if (!collection.isEmpty()) {
+            System.out.println("Элементы коллекции: ");
+            Iterator<Dragon> iterator = collection.values().iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next().toString());
+            }
+        } else {
+            System.out.println("Коллекция пуста!");
         }
         System.out.println();
     }
@@ -65,15 +80,22 @@ public class Receiver {
      */
     public void insert(Long key) {
         Set<Long> set = collection.keySet();
-        {
-            if (!set.contains(key)) {
-                Dragon dragon = new Dragon(key);
-                collection.put(key, dragon);
-                System.out.println("Дракон добавлен");
+        if (!set.contains(key) && (key > 0)) {
+            Dragon dragon = new Dragon(key);
+            collection.put(key, dragon);
+            System.out.println("Дракон успешно добавлен!");
+        } else {
+            if (key<=0) {
+                System.out.println("ID не может быть меньше 1");
             } else {
-                System.out.println("Дракон не добавлен");
+                if (collection.isEmpty()){
+                    System.out.println("Коллекция пуста! Добавьте этементы в коллекцию, чтобы продолжить.");
+                } else {
+                    System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+                }
             }
         }
+        System.out.println();
     }
 
     /**
@@ -82,14 +104,29 @@ public class Receiver {
      * @param id
      */
     public void update(Long id) {
-        if (collection.containsKey(id)) {
+        if (collection.containsKey(id) && !collection.isEmpty() && (id > 0)) {
             System.out.println("Обновление данных о драконе с ID: " + id + ".");
             LocalDate temp = collection.get(id).getCreationDate();
             collection.replace(id, new Dragon(id));
             collection.get(id).setCreationDate(temp);
         } else {
-            System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+            if (collection.isEmpty()) {
+                System.out.println("Коллекция пуста! Добавьте этементы в коллекцию, чтобы продолжить.");
+            } else {
+                if (id <= 0) {
+                    System.out.println("ID не может быть меньше 1!");
+
+                } else {
+                    if (!collection.containsKey(id)) {
+                        System.out.println("Дракон с таким ID уже существует в коллекции, попробуйте ввести другой ID" +
+                                " или используйте команду update.");
+                    } else {
+                        System.out.println("Коллекция пуста! Добавьте элементы чтобы продолжить.");
+                    }
+                }
+            }
         }
+        System.out.println();
     }
 
     /**
@@ -98,12 +135,26 @@ public class Receiver {
      * @param id
      */
     public void remove(Long id) {
-        if (collection.containsKey(id)) {
+        if (collection.containsKey(id) && !collection.isEmpty() && (id>0)) {
             collection.remove(id);
             System.out.println("Дракон с ID: " + id + " успешно удалён из коллекции.");
         } else {
-            System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+            if (collection.isEmpty()) {
+                System.out.println("Коллекция пуста! Добавьте этементы в коллекцию, чтобы продолжить.");
+            } else {
+                if (id<=0) {
+                    System.out.println("ID не может быть меньше 1");
+                } else {
+                    if (collection.isEmpty()){
+                        System.out.println("Коллекция пуста! Добавьте этементы в коллекцию, чтобы продолжить.");
+                    } else {
+                        System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+                    }
+                }
+
+            }
         }
+        System.out.println();
     }
 
     /**
@@ -116,6 +167,7 @@ public class Receiver {
         } else {
             System.out.println("Коллекция уже пуста!");
         }
+        System.out.println();
     }
 
     /**
@@ -126,10 +178,10 @@ public class Receiver {
         List<String> list = new ArrayList<>();
         Set<Long> set = collection.keySet();
         Iterator<Long> iterator = set.iterator();
-        for(int i = 0; i < set.size(); i++){
+        for (int i = 0; i < set.size(); i++) {
             String temp = gson.toJson(collection.get(iterator.next()));
-            temp = temp.replaceAll("\\{","$0\n\t\t");
-            temp = temp.replaceAll(",","$0\n\t\t");
+            temp = temp.replaceAll("\\{", "$0\n\t\t");
+            temp = temp.replaceAll(",", "$0\n\t\t");
             list.add(temp);
         }
         Iterator<Long> newIterator = set.iterator();
@@ -137,36 +189,27 @@ public class Receiver {
         File file = new File("testgson.json");
         FileWriter fileWriter = new FileWriter(file);
         fileWriter.write("{\n");
-        while (listIterator.hasNext()){
-            fileWriter.write("\t\""+ newIterator.next()+"\":");
+        while (listIterator.hasNext()) {
+            fileWriter.write("\t\"" + newIterator.next() + "\":");
             fileWriter.write(listIterator.next());
-            if (listIterator.hasNext()){
+            if (listIterator.hasNext()) {
                 fileWriter.write(",\n");
-            }else {
+            } else {
                 fileWriter.write("\n}");
             }
         }
         fileWriter.close();
     }
-    /*public void save() throws IOException {
-        Gson gson = new Gson();
-        String string = gson.toJson(collection);
-        File file = new File("gson.json");
-        FileWriter fileWriter = new FileWriter(file);
-        fileWriter.write(string);
-        fileWriter.close();
-    }
-*/
+
     public void getFile(String path) throws IOException {
         StringBuilder string = new StringBuilder();
         BufferedInputStream stream = new BufferedInputStream(new FileInputStream(new File(path)));
         byte[] contents = new byte[1024];
         int bytesRead = 0;
         String strFileContents = "";
-        while((bytesRead = stream.read(contents)) != -1) {
+        while ((bytesRead = stream.read(contents)) != -1) {
             strFileContents += new String(contents, 0, bytesRead);
         }
-        System.out.println(strFileContents);
         Gson gson = new Gson();
         Type collectionType = new TypeToken<Hashtable<Long, Dragon>>() {
         }.getType();
@@ -192,7 +235,7 @@ public class Receiver {
      * Метод для реализации команды remove_if_greater
      */
     public void removeGreater(Long id) {
-        if (collection.containsKey(id)) {
+        if (collection.containsKey(id) && !collection.isEmpty() && (id>0)) {
             List<Dragon> list = Collections.list(collection.elements());
             for (Dragon dragon : list) {
                 if (dragon.makeValue() > collection.get(id).makeValue()) {
@@ -201,8 +244,17 @@ public class Receiver {
                 }
             }
         } else {
-            System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+            if (id<=0) {
+                System.out.println("ID не может быть меньше 1!");
+            } else {
+                if (collection.isEmpty()){
+                    System.out.println("Коллекция пуста! Добавьте элементы в коллекцию, чтобы продолжить.");
+                } else {
+                    System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+                }
+            }
         }
+        System.out.println();
     }
 
     /**
@@ -211,7 +263,7 @@ public class Receiver {
      * @param id
      */
     public void removeGreaterKey(Long id) {
-        if (collection.containsKey(id)) {
+        if (!collection.isEmpty() && (id>0)) {
             Set<Long> set = collection.keySet();
             List<Long> list = new ArrayList<Long>();
             for (Long key : set) {
@@ -223,8 +275,14 @@ public class Receiver {
                 remove(key);
             }
         } else {
-            System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+            if (id<=0) {
+                System.out.println("ID не может быть меньше 1");
+            } else {
+                    System.out.println("Коллекция пуста! Добавьте этементы в коллекцию, чтобы продолжить.");
+
+            }
         }
+        System.out.println();
     }
 
     /**
@@ -233,7 +291,7 @@ public class Receiver {
      * @param id
      */
     public void replaceGreater(Long id) {
-        if (collection.containsKey(id)) {
+        if (collection.containsKey(id) && !collection.isEmpty() && (id>0)) {
             Dragon dragon = new Dragon(id);
             if (dragon.makeValue() > collection.get(id).makeValue()) {
                 System.out.println("Введённое значение больше имеющегося");
@@ -242,51 +300,63 @@ public class Receiver {
                 dragon.setCreationDate(temp);
                 System.out.println("Дракон успешно заменён");
             } else {
-                System.out.println("Введённое значение меньше имеющегося, замены не произошло");
+                System.out.println("Введённое значение не больше имеющегося, замены не произошло");
             }
         } else {
-            System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+            if (id<=0) {
+                System.out.println("ID не может быть меньше 1");
+            } else {
+                if (collection.isEmpty()){
+                    System.out.println("Коллекция пуста! Добавьте этементы в коллекцию, чтобы продолжить.");
+                } else {
+                    System.out.println("Такого дракона в коллекции нет, попробуйте ввести другой ID");
+                }
+            }
         }
+        System.out.println();
     }
 
     /**
      * Метод для реализации команды min_by_name
      */
     public void minByName() {
-        if (!collection.isEmpty()){
-        List<Dragon> list = Collections.list(collection.elements());
-        Dragon minDragon = null;
-        SortedSet<String> set = new TreeSet<String>();
-        for (Dragon dragon : list) {
-            set.add(dragon.getName());
-        }
-        for (Dragon dragon : list) {
-            if (dragon.getName().equals(set.first())) {
-                minDragon = dragon;
+        if (!collection.isEmpty()) {
+            List<Dragon> list = Collections.list(collection.elements());
+            Dragon minDragon = null;
+            SortedSet<String> set = new TreeSet<String>();
+            for (Dragon dragon : list) {
+                set.add(dragon.getName());
             }
+            for (Dragon dragon : list) {
+                if (dragon.getName().equals(set.first())) {
+                    minDragon = dragon;
+                }
+            }
+            System.out.println(minDragon.toString());
+        } else {
+            System.out.println("Коллекция пуста! Добавьте элементы в коллекцию, чтобы продолжить.");
         }
-        System.out.println(minDragon.toString());} else {
-            System.out.println("Коллекция пуста!");
-        }
+        System.out.println();
     }
 
     /**
      * Метод для реализации команды print_unique_killer
      */
     public void printUniqueKiller() {
-        if (!collection.isEmpty()){
-        List<Dragon> list = Collections.list(collection.elements());
-        Set<Person> set = new HashSet<Person>();
-        for (Dragon dragon : list) {
-            set.add(dragon.getKiller());
+        if (!collection.isEmpty()) {
+            List<Dragon> list = Collections.list(collection.elements());
+            Set<Person> set = new HashSet<Person>();
+            for (Dragon dragon : list) {
+                set.add(dragon.getKiller());
+            }
+            Iterator<Person> iterator = set.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next().toString());
+            }
+        } else {
+            System.out.println("Коллекция пуста! Добавьте элементы в коллекцию чтобы продолжить.");
         }
-        Iterator<Person> iterator = set.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next().toString());
-        }} else {
-            System.out.println("Коллекция пуста!");
-        }
-
+        System.out.println();
 
     }
 
@@ -297,11 +367,13 @@ public class Receiver {
         if (!collection.isEmpty()) {
             SortedSet<Long> sortedSet = new TreeSet<>(collection.keySet());
             for (Long key : sortedSet) {
-                System.out.println(collection.get(key).getDescription());
+                System.out.println("Вывод полей description всех драконов в коллекции в порядке возрастания:");
+                System.out.print("Поле description дракона с ID: " + key + ": " + collection.get(key).getDescription());
             }
         } else {
-            System.out.println("Коллекция пуста!");
+            System.out.println("Коллекция пуста! Добавьте элементы в коллекцию чтобы продолжить.");
         }
+        System.out.println();
 
     }
 

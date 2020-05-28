@@ -95,8 +95,8 @@ public class Dragon {
         return color;
     }
 
-    public int makeValue(){
-        return age+wingspan+42;
+    public long makeValue(){
+        return (id + 42)/42;
     }
 
     public void setCoordinates(long x, Long y) {

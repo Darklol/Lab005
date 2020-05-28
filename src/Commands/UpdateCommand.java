@@ -1,14 +1,10 @@
 package Commands;
 
-import Data.Invoker;
 import Data.Receiver;
 
-import java.util.Arrays;
-import java.util.Scanner;
+public class UpdateCommand extends Command {
 
-public class InsertCommand extends Command {
-
-    public InsertCommand(Receiver receiver) {
+    public UpdateCommand(Receiver receiver) {
         super(receiver);
     }
 
@@ -20,7 +16,7 @@ public class InsertCommand extends Command {
                         "(Требуется: " + needArguments() + ").\nВсе остальные аргументы будут проигнорированы.");
             }
             try {
-                receiver.insert(Long.parseLong(arguments[0]));
+                receiver.update(Long.parseLong(arguments[0]));
             } catch (IllegalArgumentException e) {
                 System.out.println("Неправильный ввод аргумента!");
             }
@@ -37,13 +33,11 @@ public class InsertCommand extends Command {
 
     @Override
     public String manual() {
-        return "Добавить новый элемент с заданным ключом.";
+        return "Обновить значение элемента, ID которого равен заданному.";
     }
 
     @Override
     public String commandName() {
-        return "insert";
+        return "update";
     }
-
-
 }

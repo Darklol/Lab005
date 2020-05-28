@@ -13,20 +13,16 @@ public class Main {
 
         Receiver receiver = new Receiver();
 
-        Hashtable<Long, Dragon> col = new Hashtable<Long, Dragon>();
-
-
-        receiver.setCollection(col);
-        receiver.setInitializationDate();
-
         Invoker invoker = new Invoker(receiver);
-        invoker.input();
-        receiver.show();
-//        try {
-//            receiver.getFile("111testgson.json");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            receiver.getFile("111testgson.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        while (true){
+            invoker.input();
+        }
 //
 //        try {
 //            receiver.save();

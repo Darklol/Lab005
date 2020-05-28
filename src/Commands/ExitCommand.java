@@ -1,14 +1,10 @@
 package Commands;
 
-import Data.Invoker;
 import Data.Receiver;
 
-import java.util.Arrays;
-import java.util.Scanner;
+public class ExitCommand extends Command {
 
-public class InsertCommand extends Command {
-
-    public InsertCommand(Receiver receiver) {
+    public ExitCommand(Receiver receiver) {
         super(receiver);
     }
 
@@ -20,7 +16,7 @@ public class InsertCommand extends Command {
                         "(Требуется: " + needArguments() + ").\nВсе остальные аргументы будут проигнорированы.");
             }
             try {
-                receiver.insert(Long.parseLong(arguments[0]));
+                receiver.exit();
             } catch (IllegalArgumentException e) {
                 System.out.println("Неправильный ввод аргумента!");
             }
@@ -32,18 +28,16 @@ public class InsertCommand extends Command {
 
     @Override
     public int needArguments() {
-        return 1;
+        return 0;
     }
 
     @Override
     public String manual() {
-        return "Добавить новый элемент с заданным ключом.";
+        return "Завершить программу (без сохранения в файл).";
     }
 
     @Override
     public String commandName() {
-        return "insert";
+        return "exit";
     }
-
-
 }

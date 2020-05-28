@@ -1,14 +1,10 @@
 package Commands;
 
-import Data.Invoker;
 import Data.Receiver;
 
-import java.util.Arrays;
-import java.util.Scanner;
+public class RemoveGreaterKeyCommand extends Command {
 
-public class InsertCommand extends Command {
-
-    public InsertCommand(Receiver receiver) {
+    public RemoveGreaterKeyCommand(Receiver receiver) {
         super(receiver);
     }
 
@@ -20,7 +16,7 @@ public class InsertCommand extends Command {
                         "(Требуется: " + needArguments() + ").\nВсе остальные аргументы будут проигнорированы.");
             }
             try {
-                receiver.insert(Long.parseLong(arguments[0]));
+                receiver.removeGreaterKey(Long.parseLong(arguments[0]));
             } catch (IllegalArgumentException e) {
                 System.out.println("Неправильный ввод аргумента!");
             }
@@ -37,13 +33,11 @@ public class InsertCommand extends Command {
 
     @Override
     public String manual() {
-        return "Добавить новый элемент с заданным ключом.";
+        return "Удалить из коллекции все элементы, ключ которых превышает заданный.";
     }
 
     @Override
     public String commandName() {
-        return "insert";
+        return "remove_greater_key";
     }
-
-
 }
