@@ -15,35 +15,35 @@ public class Dragon {
     private Color color; //Поле не может быть null
     private Person killer; //Поле может быть null
 
-//    @Override
-//    public String toString(){
-//        return "Дракон \n" +
-//                "id: " + id +"\n" +
-//                "Имя: " + name +"\n" +
-//                "Координаты:" + coordinates +"\n" +
-//                "Дата создания:" + creationDate +"\n" +
-//                "Возраст:" + age +"\n" +
-//                "Описание:" + description +"\n" +
-//                "Размах крыльев:" + wingspan +"\n" +
-//                "Цвет:" + color +"\n" +
-//                "Убийца:" + killer +"\n";
-//    }
-
-
     @Override
-    public String toString() {
-        return "Dragon{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", coordinates=" + coordinates +
-                ", creationDate=" + creationDate +
-                ", age=" + age +
-                ", description='" + description + '\'' +
-                ", wingspan=" + wingspan +
-                ", color=" + color +
-                ", killer=" + killer +
-                '}';
+    public String toString(){
+        return "Дракон \n" +
+                "id: " + id +"\n" +
+                "Имя: " + name +"\n" +
+                "Координаты:" + coordinates +"\n" +
+                "Дата создания:" + creationDate +"\n" +
+                "Возраст:" + age +"\n" +
+                "Описание:" + description +"\n" +
+                "Размах крыльев:" + wingspan +"\n" +
+                "Цвет:" + color +"\n" +
+                "Убийца:" + killer +"\n";
     }
+
+
+//    @Override
+//    public String toString() {
+//        return "Dragon{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", coordinates=" + coordinates +
+//                ", creationDate=" + creationDate +
+//                ", age=" + age +
+//                ", description='" + description + '\'' +
+//                ", wingspan=" + wingspan +
+//                ", color=" + color +
+//                ", killer=" + killer +
+//                '}';
+//    }
 
     public Dragon(long id){
         this.id = id;
@@ -57,6 +57,8 @@ public class Dragon {
         System.out.println("Введите описание дракона: ");
         this.description = sc.nextLine();
         this.killer = new Person();
+        this.setCreationDate();
+        this.getCreationDate();
     }
 
     public Long getId() {
@@ -74,6 +76,8 @@ public class Dragon {
     public String getDescription() {
         return description;
     }
+
+
 
     public Coordinates getCoordinates() {
         return coordinates;

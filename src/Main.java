@@ -2,6 +2,7 @@ import Data.Dragon;
 import Data.Person;
 import Data.Receiver;
 
+import java.io.IOException;
 import java.util.Hashtable;
 
 public class Main {
@@ -16,15 +17,27 @@ public class Main {
         receiver.setCollection(col);
         receiver.setInitializationDate();
 
-        receiver.insert((long)1);
-        receiver.insert((long)5);
-        receiver.insert((long)2);
-        receiver.insert((long)4);
+//        receiver.insert((long)666);
+//        receiver.insert((long)777);
+//        receiver.insert((long)222);
+//        receiver.insert((long)444);
+////
 
-        System.out.println(receiver.getCollection());
-        receiver.show();
-        receiver.getFile();
-        System.out.println(receiver.getCollection());
+
+//        receiver.show();
+//        receiver.update((long)6);
+//        receiver.show();
+        try {
+            receiver.getFile("testgson.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            receiver.save();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         receiver.show();
     }
 }
