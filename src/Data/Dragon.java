@@ -16,17 +16,17 @@ public class Dragon {
     private Person killer; //Поле может быть null
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Дракон \n" +
-                "id: " + id +"\n" +
-                "Имя: " + name +"\n" +
-                "Координаты:" + coordinates +"\n" +
-                "Дата создания:" + creationDate +"\n" +
-                "Возраст:" + age +"\n" +
-                "Описание:" + description +"\n" +
-                "Размах крыльев:" + wingspan +"\n" +
-                "Цвет:" + color +"\n" +
-                "Убийца:" + killer +"\n";
+                "id: " + id + "\n" +
+                "Имя: " + name + "\n" +
+                "Координаты:" + coordinates + "\n" +
+                "Дата создания:" + creationDate + "\n" +
+                "Возраст:" + age + "\n" +
+                "Описание:" + description + "\n" +
+                "Размах крыльев:" + wingspan + "\n" +
+                "Цвет:" + color + "\n" +
+                "Убийца:" + killer + "\n";
     }
 
 
@@ -45,20 +45,130 @@ public class Dragon {
 //                '}';
 //    }
 
-    public Dragon(long id){
+    public Dragon(long id) {
+        boolean wrongInput = true;
         this.id = id;
         Scanner sc = new Scanner(System.in);
-        /*System.out.println("Введите имя дракона:");
-        this.name = (sc.nextLine());
+        System.out.println("Введите имя дракона:");
+        while (wrongInput) {
+            this.name = (sc.nextLine());
+            if (!name.equals("")) {
+                wrongInput = false;
+            } else {
+                System.out.println("Поле не может быть пустым. Попробуйте ещё раз.");
+            }
+        }
+        System.out.println();
+        wrongInput = true;
         System.out.println("Введите координаты дракона:");
-        setCoordinates(Long.parseLong(sc.nextLine()), Long.parseLong(sc.nextLine()));
+        setCoordinates();
+        System.out.println("Введите координату x");
+        while (wrongInput) {
+            try {
+                coordinates.setX(Long.parseLong(sc.nextLine()));
+                wrongInput = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка ввода! Попробуйте ввести ещё раз.");
+            }
+        }
+        System.out.println("Введите координату y");
+        wrongInput = true;
+        while (wrongInput) {
+            try {
+                coordinates.setY(Long.parseLong(sc.nextLine()));
+                if (coordinates.getY() > -324) {
+                    wrongInput = false;
+                } else {
+                    System.out.println("Значение поля должно быть больше -324! Попробуйте ввести ещё раз.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка ввода! Попробуйте ввести ещё раз.");
+            }
+        }
         System.out.println("Введите возраст дракона:");
-        this.age = (Integer.parseInt(sc.nextLine()));*/
-        System.out.println("Введите описание дракона: ");
-        this.description = sc.nextLine();
-        this.killer = new Person();
+        wrongInput = true;
+        while (wrongInput) {
+            try {
+                String temp = sc.nextLine();
+                if (!temp.equals("")) {
+                    this.age = Integer.parseInt(temp);
+                    if (age > 0) {
+                        wrongInput = false;
+                    } else {
+                        System.out.println("Значение поля должно быть больше 0 либо null! Попробуйте ввести ещё раз.");
+                    }
+                } else {
+                    age = null;
+                    wrongInput = false;
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("Ошибка ввода! Попробуйте ввести ещё раз.");
+            }
+        }
+        System.out.println();
         this.setCreationDate();
-        this.getCreationDate();
+        System.out.println("Введите описание дракона: ");
+        wrongInput = true;
+        while (wrongInput) {
+            description = sc.nextLine();
+            if (!description.equals("")) {
+                wrongInput = false;
+            } else {
+                System.out.println("Поле не может быть пустым! Попробуйте ещё раз.");
+            }
+        }
+        System.out.println();
+        System.out.println("Введите размах крыльев дракона:");
+        wrongInput = true;
+        while (wrongInput) {
+            try {
+                String temp = sc.nextLine();
+                if (!temp.equals("")) {
+                    this.wingspan = Integer.parseInt(temp);
+                    if (wingspan > 0) {
+                        wrongInput = false;
+                    } else {
+                        System.out.println("Значение поля должно быть больше 0 либо null! Попробуйте ввести ещё раз.");
+                    }
+                } else {
+                    wingspan = null;
+                    wrongInput = false;
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("Ошибка ввода! Попробуйте ввести ещё раз.");
+            }
+        }
+        System.out.println();
+        System.out.println("Введите цвет дракона:");
+        System.out.println("Доступные значения: BLACK, BLUE, YELLOW, ORANGE, BROWN");
+        wrongInput = true;
+        while (wrongInput) {
+            String temp = sc.nextLine();
+            try {
+                color = Enum.valueOf(Color.class, temp);
+                wrongInput = false;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Ошибка ввода! Попробуйте ввести ещё раз.");
+            }
+        }
+        System.out.println();
+        System.out.println("Дракон побеждён?\n(Введите yes или no");
+        wrongInput = true;
+        while (wrongInput) {
+            String temp = sc.nextLine();
+            if (temp.trim().equals("yes")) {
+                wrongInput = false;
+                System.out.println("Введите данные убийцы дракона");
+                killer = new Person();
+            } else {
+                if (temp.trim().equals("no")) {
+                    wrongInput = false;
+                } else {
+                    System.out.println("Ошибка ввода! Пожалуйста, введите yes или no");
+                }
+            }
+        }
+        System.out.println("Данные о драконе введены.");
     }
 
     public Long getId() {
@@ -77,8 +187,6 @@ public class Dragon {
         return description;
     }
 
-
-
     public Coordinates getCoordinates() {
         return coordinates;
     }
@@ -95,12 +203,12 @@ public class Dragon {
         return color;
     }
 
-    public long makeValue(){
-        return (id + 42)/42;
+    public long makeValue() {
+        return (id + 42) / id;
     }
 
-    public void setCoordinates(long x, Long y) {
-        coordinates = new Coordinates(x, y);
+    public void setCoordinates() {
+        coordinates = new Coordinates();
     }
 
     public void setName(String name) {
@@ -115,7 +223,7 @@ public class Dragon {
         this.creationDate = date;
     }
 
-    public LocalDate getCreationDate(){
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 

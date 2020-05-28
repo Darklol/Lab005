@@ -11,10 +11,6 @@ public class Coordinates {
                 ", y = " + y;
     }
 
-    Coordinates(long x, Long y){
-        setX(x);
-        setY(y);
-    }
 
     public long getX() {
         return x;

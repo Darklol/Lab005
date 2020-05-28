@@ -1,7 +1,10 @@
 package Data;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Person {
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -9,8 +12,76 @@ public class Person {
     private Color eyeColor; //Поле может быть null
     private Color hairColor; //Поле может быть null
 
-    public Person(){
-        name = Double.toString(Math.random());
+    public Person() {
+        boolean wrongInput = true;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите имя человека:");
+        while (wrongInput) {
+            this.name = (sc.nextLine());
+            if (!name.equals("")) {
+                wrongInput = false;
+            } else {
+                System.out.println("Поле не может быть пустым. Попробуйте ещё раз.");
+            }
+        }
+        System.out.println();
+        System.out.println("Введите день рождения человека (в формате dd-mm-yyyy): ");
+        wrongInput = true;
+        while (wrongInput) {
+            String temp = sc.nextLine();
+            String[] tempArray = temp.split("-");
+
+
+            try {
+                if (tempArray.length == 3) {
+                    if (Integer.parseInt(tempArray[0]) < 31 && Integer.parseInt(tempArray[1]) < 13) {
+                        birthday = new SimpleDateFormat("dd-MM-yyyy").parse(temp);
+                        wrongInput = false;
+                    } else System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
+                } else System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
+            } catch (ParseException | NumberFormatException e) {
+                System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
+            }
+
+        }
+        System.out.println();
+        System.out.println("Введите цвет глаз человека:");
+        System.out.println("Доступные значения: BLACK, BLUE, YELLOW, ORANGE, BROWN, NULL");
+        wrongInput = true;
+        while (wrongInput) {
+            String temp = sc.nextLine();
+            if (!temp.equals("NULL")) {
+                try {
+                    eyeColor = Enum.valueOf(Color.class, temp);
+                    wrongInput = false;
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Ошибка ввода! Попробуйте ввести ещё раз.");
+                }
+            } else {
+                eyeColor = null;
+                wrongInput = false;
+            }
+        }
+        System.out.println();
+        System.out.println("Введите цвет волос человека:");
+        System.out.println("Доступные значения: BLACK, BLUE, YELLOW, ORANGE, BROWN, NULL");
+        wrongInput = true;
+        while (wrongInput) {
+            String temp = sc.nextLine();
+            if (!temp.equals("NULL")) {
+                try {
+                    hairColor = Enum.valueOf(Color.class, temp);
+                    wrongInput = false;
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Ошибка ввода! Попробуйте ввести ещё раз.");
+                }
+            } else {
+                hairColor = null;
+                wrongInput = false;
+            }
+        }
+        System.out.println("Данные о человеке введены.");
+        System.out.println();
     }
 
     @Override

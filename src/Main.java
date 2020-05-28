@@ -14,20 +14,9 @@ public class Main {
         Receiver receiver = new Receiver();
 
         Invoker invoker = new Invoker(receiver);
-        try {
-            receiver.getFile("111testgson.json");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         while (true){
             invoker.input();
         }
-//
-//        try {
-//            receiver.save();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 }

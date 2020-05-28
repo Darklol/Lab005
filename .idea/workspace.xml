@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="894ad3b6-323a-439c-87b2-5d7ef986f688" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Commands/ClearCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/ExitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/HelpCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/InfoCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/MinByNameCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/PrintAscendingDescCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/PrintUniqueKillerCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/RemoveGreaterCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/RemoveGreaterKeyCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/RemoveKeyCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/ReplaceIfGreaterCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/ShowCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands/UpdateCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/InsertCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/InsertCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Dragon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +107,7 @@
       <workItem from="1590644740964" duration="2415000" />
       <workItem from="1590647713677" duration="6282000" />
       <workItem from="1590655744495" duration="11518000" />
-      <workItem from="1590682562909" duration="11514000" />
+      <workItem from="1590682562909" duration="19788000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1589308146639</created>
@@ -221,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590674514989</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="almost all commands added">
+      <created>1590695296963</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1590695296963</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +248,8 @@
     <MESSAGE value="Added Gson lib&#10;&#10;save and getFile methods in receiver probably working" />
     <MESSAGE value="better save" />
     <MESSAGE value="Invoker input method working&#10;&#10;added 1 command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Invoker input method working&#10;&#10;added 1 command" />
+    <MESSAGE value="almost all commands added" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost all commands added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="73" key="#Deployment" timestamp="1589355908919">
@@ -274,38 +268,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590690159367" />
-    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590674513652">
+    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590695295503">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590674513652" />
+    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590695295503" />
     <state x="473" y="153" key="FileChooserDialogImpl" timestamp="1590517854972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="473" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590517854972" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1590695121719">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1590704716495">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590695121719" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1590695121718">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590704716495" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1590704716494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590695121718" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1590695121718">
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590704716494" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1590704716494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590695121718" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1590695121718">
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590704716494" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1590704716495">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590695121718" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590704716495" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1590604933934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590604933934" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590674520202">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590695304171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590674520202" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590695304171" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590682562563">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
