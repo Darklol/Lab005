@@ -1,4 +1,6 @@
+import Commands.InsertCommand;
 import Data.Dragon;
+import Data.Invoker;
 import Data.Person;
 import Data.Receiver;
 
@@ -17,27 +19,19 @@ public class Main {
         receiver.setCollection(col);
         receiver.setInitializationDate();
 
-//        receiver.insert((long)666);
-//        receiver.insert((long)777);
-//        receiver.insert((long)222);
-//        receiver.insert((long)444);
-////
-
-
-//        receiver.show();
-//        receiver.update((long)6);
-//        receiver.show();
-        try {
-            receiver.getFile("testgson.json");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            receiver.save();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Invoker invoker = new Invoker(receiver);
+        invoker.input();
         receiver.show();
+//        try {
+//            receiver.getFile("111testgson.json");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            receiver.save();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

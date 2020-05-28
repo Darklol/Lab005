@@ -1,19 +1,22 @@
 package Commands;
 
-import Data.Invoker;
 import Data.Receiver;
 
-public abstract class Command {
+import java.util.Scanner;
+
+public abstract class Command{
     /** абстрактный класс команды
      * определяет общее поведение всех команд
-     * @param Invoker
+     *
      */
-    private Invoker invoker;
-    private Receiver receiver;
+    protected Receiver receiver;
+    protected Scanner scanner;
 
-    public abstract void execute();
+    public abstract void execute(String[] arguments);
 
-    abstract void setInvoker(Invoker invoker);
+    public Command(Receiver receiver){
+        this.receiver = receiver;
+    }
 
     /**
      * Метод, который показывает, нужны ли команде аргументы

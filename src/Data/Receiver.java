@@ -25,6 +25,7 @@ public class Receiver {
 
     public Receiver() {
         setInitializationDate();
+        collection = new Hashtable<Long, Dragon>();
     }
 
     /**
@@ -159,16 +160,17 @@ public class Receiver {
     public void getFile(String path) throws IOException {
         StringBuilder string = new StringBuilder();
         BufferedInputStream stream = new BufferedInputStream(new FileInputStream(new File(path)));
-        Scanner scanner = new Scanner(stream);
-        while (scanner.hasNextLine()) {
-            string.append("\n" + scanner.nextLine());
+        byte[] contents = new byte[1024];
+        int bytesRead = 0;
+        String strFileContents = "";
+        while((bytesRead = stream.read(contents)) != -1) {
+            strFileContents += new String(contents, 0, bytesRead);
         }
-        System.out.println(string);
+        System.out.println(strFileContents);
         Gson gson = new Gson();
         Type collectionType = new TypeToken<Hashtable<Long, Dragon>>() {
         }.getType();
-        collection = gson.fromJson(string.toString(), collectionType);
-
+        collection = gson.fromJson(strFileContents, collectionType);
     }
 
     /**
