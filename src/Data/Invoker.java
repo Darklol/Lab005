@@ -3,6 +3,7 @@ package Data;
 import Commands.*;
 
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -36,7 +37,13 @@ public class Invoker {
      */
     public void input(){
         System.out.println("Введите команду:");
-        String string = scanner.nextLine().trim();
+        String string = null;
+        try {
+            string = scanner.nextLine().trim();
+        } catch (NoSuchElementException e) {
+            System.out.println("Why are you so cruel...");
+            System.exit(0);
+        }
         String[] input = string.split("\\s+");
         String[] arguments = new String[input.length-1];
         System.arraycopy(input, 1, arguments, 0, arguments.length);

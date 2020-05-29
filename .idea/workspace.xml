@@ -8,11 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="894ad3b6-323a-439c-87b2-5d7ef986f688" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/input.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Dragon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Invoker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +114,7 @@
       <workItem from="1590682562909" duration="28942000" />
       <workItem from="1590713897174" duration="5232000" />
       <workItem from="1590719156220" duration="1741000" />
-      <workItem from="1590740136784" duration="4277000" />
+      <workItem from="1590740136784" duration="4801000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1589308146639</created>
@@ -253,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590721413784</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="input from file fixes">
+      <created>1590744447960</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1590744447960</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +295,8 @@
     <MESSAGE value="ITS WORKING! (in IDEA)" />
     <MESSAGE value="fix comments" />
     <MESSAGE value="fix no args exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix no args exception" />
+    <MESSAGE value="input from file fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="input from file fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="73" key="#Deployment" timestamp="1589355908919">
@@ -315,10 +319,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1590719930550" />
-    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590721412648">
+    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590744446443">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590721412648" />
+    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590744446443" />
     <state x="473" y="153" key="FileChooserDialogImpl" timestamp="1590719757054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -327,22 +331,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="427" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1536.824@0.0.1536.824" timestamp="1590710660212" />
-    <state width="1493" height="269" key="GridCell.Tab.0.bottom" timestamp="1590744330235">
+    <state width="1493" height="269" key="GridCell.Tab.0.bottom" timestamp="1590744777233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="269" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
-    <state width="1493" height="269" key="GridCell.Tab.0.center" timestamp="1590744330235">
+    <state width="1493" height="269" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590744777233" />
+    <state width="1493" height="269" key="GridCell.Tab.0.center" timestamp="1590744777233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="269" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
-    <state width="1493" height="269" key="GridCell.Tab.0.left" timestamp="1590744330235">
+    <state width="1493" height="269" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590744777233" />
+    <state width="1493" height="269" key="GridCell.Tab.0.left" timestamp="1590744777233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="269" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
-    <state width="1493" height="269" key="GridCell.Tab.0.right" timestamp="1590744330235">
+    <state width="1493" height="269" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590744777233" />
+    <state width="1493" height="269" key="GridCell.Tab.0.right" timestamp="1590744777233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="269" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
+    <state width="1493" height="269" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590744777233" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1590721428177">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
