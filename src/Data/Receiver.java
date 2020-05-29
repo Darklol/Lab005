@@ -172,37 +172,40 @@ public class Receiver {
      * Метод для реализации команды save
      */
     public void save() throws IOException {
-        if (!collection.isEmpty()){
-        Gson gson = new Gson();
-        List<String> list = new ArrayList<>();
-        Set<Long> set = collection.keySet();
-        Iterator<Long> iterator = set.iterator();
-        for (int i = 0; i < set.size(); i++) {
-            String temp = gson.toJson(collection.get(iterator.next()));
-            list.add(temp);
-        }
-        Iterator<Long> newIterator = set.iterator();
-        Iterator<String> listIterator = list.iterator();
-        File file = new File("output.json");
-        System.out.println("Сохранение коллекции в файл " + file.getAbsolutePath());
-        PrintWriter printWriter = new PrintWriter(file);
-        printWriter.write("{\n");
-        while (listIterator.hasNext()) {
-            printWriter.write("\t\"" + newIterator.next() + "\":");
-            printWriter.write(listIterator.next());
-            if (listIterator.hasNext()) {
-                printWriter.write(",\n");
-            } else {
-                printWriter.write("\n}");
+        if (!collection.isEmpty()) {
+            Gson gson = new Gson();
+            List<String> list = new ArrayList<>();
+            Set<Long> set = collection.keySet();
+            Iterator<Long> iterator = set.iterator();
+            for (int i = 0; i < set.size(); i++) {
+                String temp = gson.toJson(collection.get(iterator.next()));
+                list.add(temp);
             }
+            Iterator<Long> newIterator = set.iterator();
+            Iterator<String> listIterator = list.iterator();
+            File file = new File("output.json");
+            System.out.println("Сохранение коллекции в файл " + file.getAbsolutePath());
+            PrintWriter printWriter = new PrintWriter(file);
+            printWriter.write("{\n");
+            while (listIterator.hasNext()) {
+                printWriter.write("\t\"" + newIterator.next() + "\":");
+                printWriter.write(listIterator.next());
+                if (listIterator.hasNext()) {
+                    printWriter.write(",\n");
+                } else {
+                    printWriter.write("\n}");
+                }
+            }
+            printWriter.flush();
+            printWriter.close();
+        } else {
+            System.out.println("Запись пустой коллекции в файл невозможна");
         }
-        printWriter.flush();
-        printWriter.close();}
-        else { System.out.println("Запись пустой коллекции в файл невозможна");}
     }
 
     /**
      * Метод для считывания коллекции из файла
+     *
      * @param path
      * @throws IOException
      * @throws JsonSyntaxException
@@ -216,35 +219,45 @@ public class Receiver {
         while ((bytesRead = stream.read(contents)) != -1) {
             strFileContents += new String(contents, 0, bytesRead);
         }
-        if (!strFileContents.trim().equals("")){
-        Gson gson = new Gson();
-        Type collectionType = new TypeToken<Hashtable<Long, Dragon>>() {
-        }.getType();
-        //проверка правильности введённых значений
-        Hashtable<Long,Dragon> temp =  gson.fromJson(strFileContents, collectionType);
-        Set<Long> keySet = temp.keySet();
-        Set<Long> remove = new TreeSet<>();
-        for (Long key : keySet){
-            if ((key <= 0) || (!key.equals(temp.get(key).getId())) ||
-                    (temp.get(key).getCoordinates().getY() < -324) || (temp.get(key).getCoordinates() == null) ||
-                    (temp.get(key).getName().equals("")) || (temp.get(key).getDescription() == null)||
-                    (temp.get(key).getAge() != null && temp.get(key).getAge()<0) ||
-                    (temp.get(key).getWingspan() != null && temp.get(key).getWingspan()<0) ||
-                    (temp.get(key).getCreationDate() == null) || (temp.get(key).getColor() == null) ||
-                    (temp.get(key).getKiller().getName().equals(""))){
+        if (!strFileContents.trim().equals("")) {
+            Gson gson = new Gson();
+            Type collectionType = new TypeToken<Hashtable<Long, Dragon>>() {
+            }.getType();
+            //проверка правильности введённых значений
+            Hashtable<Long, Dragon> temp = gson.fromJson(strFileContents, collectionType);
+            Set<Long> keySet = temp.keySet();
+            Set<Long> remove = new TreeSet<>();
+            for (Long key : keySet) {
+                if ((key <= 0) || (!key.equals(temp.get(key).getId())) ||
+                        (temp.get(key).getCoordinates().getY() < -324) || (temp.get(key).getCoordinates() == null) ||
+                        (temp.get(key).getName().equals("")) || (temp.get(key).getDescription() == null) ||
+                        (temp.get(key).getAge() != null && temp.get(key).getAge() < 0) ||
+                        (temp.get(key).getWingspan() != null && temp.get(key).getWingspan() < 0) ||
+                        (temp.get(key).getCreationDate() == null) || (temp.get(key).getColor() == null)) {
+                    if (temp.get(key).getKiller() != null) {
+                        if (!temp.get(key).getKiller().getName().equals("")) {
+                            remove.add(key);
+                        }
+                    }
 
-                remove.add(key);
+                    remove.add(key);
+                } else {
+                    if (temp.get(key).getKiller() != null) {
+                        if (temp.get(key).getKiller().getName().equals("")) {
+                            remove.add(key);
+                        }
+                    }
+                }
             }
-        }
-        if (!remove.isEmpty()){
-            System.out.println("Внимание! Обнаружено неверное значение в поле элемента коллекции, " +
-                    "все элемены с неправильными значениями будут удалены.");
-            for (Long key : remove){
-                temp.remove(key);
+            if (!remove.isEmpty()) {
+                System.out.println("Внимание! Обнаружено неверное значение в поле элемента коллекции, " +
+                        "все элемены с неправильными значениями будут удалены.");
+                for (Long key : remove) {
+                    temp.remove(key);
+                }
             }
-        }
-        collection = temp;}
-        else {
+            collection = temp;
+        } else {
             System.out.println("Коллекция не была загружена.\n" +
                     "Файл пуст. \n\n" +
                     "Запуск программы без данных из файла.");
@@ -253,6 +266,7 @@ public class Receiver {
 
     /**
      * Метод для реализации команды execute_script
+     *
      * @param path
      * @throws IOException
      */
@@ -289,6 +303,7 @@ public class Receiver {
 
     /**
      * Метод для реализации команды remove_if_greater
+     *
      * @param id
      */
     public void removeGreater(Long id) {

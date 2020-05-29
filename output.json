@@ -1,3 +1,6 @@
 {
-	"1":{"id":1,"name":"1","coordinates":{"x":1,"y":1},"creationDate":{"year":2020,"month":5,"day":29},"age":1,"description":"1","wingspan":1,"color":"BLACK","killer":{"name":"1","birthday":"Nov 11, 1111 12:00:00 AM"}}
+	"777":{"id":777,"name":"Angel","coordinates":{"x":45,"y":45},"creationDate":{"year":2020,"month":5,"day":29},"age":90,"description":"A cute angel","wingspan":30,"color":"BLUE"},
+	"1337":{"id":1337,"name":"L33T","coordinates":{"x":13,"y":37},"creationDate":{"year":2020,"month":5,"day":29},"age":90,"description":"Another dragon","wingspan":30,"color":"BLUE"},
+	"111":{"id":111,"name":"Angle","coordinates":{"x":45,"y":45},"creationDate":{"year":2020,"month":5,"day":29},"age":90,"description":"Acute angle","wingspan":30,"color":"BROWN"},
+	"8888":{"id":8888,"name":"Alduin","coordinates":{"x":45,"y":63},"creationDate":{"year":2020,"month":5,"day":29},"age":12452,"description":"World end","wingspan":123,"color":"YELLOW","killer":{"name":"Dovakhiin"}}
 }
