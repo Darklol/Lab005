@@ -7,11 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="894ad3b6-323a-439c-87b2-5d7ef986f688" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Lab005_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/input.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Receiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +69,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Lab005" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Projects\Lab005\input.json" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -116,7 +117,8 @@
       <workItem from="1590655744495" duration="11518000" />
       <workItem from="1590682562909" duration="28942000" />
       <workItem from="1590713897174" duration="5232000" />
-      <workItem from="1590719156220" duration="1494000" />
+      <workItem from="1590719156220" duration="1741000" />
+      <workItem from="1590740136784" duration="4277000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1589308146639</created>
@@ -244,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590719117244</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix no args exception">
+      <created>1590721413784</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1590721413784</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,33 +291,34 @@
     <MESSAGE value="BFC is ready!&#10;&#10;(BFC - Big Fucking Constructor)" />
     <MESSAGE value="ITS WORKING! (in IDEA)" />
     <MESSAGE value="fix comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix comments" />
+    <MESSAGE value="fix no args exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix no args exception" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="73" key="#Deployment" timestamp="1589355908919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="722" y="73" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1589355908919" />
-    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590721253141">
+    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590740832131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1590721253141" />
+    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1590740832131" />
     <state x="898" y="217" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589356764957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="898" y="217" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589356764957" />
-    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1590711312553">
+    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1590742613897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590711312553" />
+    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590742613897" />
     <state x="499" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590719930550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1590719930550" />
-    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590719115770">
+    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590721412648">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590719115770" />
+    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590721412648" />
     <state x="473" y="153" key="FileChooserDialogImpl" timestamp="1590719757054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -317,38 +327,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="427" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1536.824@0.0.1536.824" timestamp="1590710660212" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1590719135329">
+    <state width="1493" height="269" key="GridCell.Tab.0.bottom" timestamp="1590744330235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590719135329" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1590719135329">
+    <state width="1493" height="269" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
+    <state width="1493" height="269" key="GridCell.Tab.0.center" timestamp="1590744330235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590719135329" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1590719135329">
+    <state width="1493" height="269" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
+    <state width="1493" height="269" key="GridCell.Tab.0.left" timestamp="1590744330235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590719135329" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1590719135329">
+    <state width="1493" height="269" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
+    <state width="1493" height="269" key="GridCell.Tab.0.right" timestamp="1590744330235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590719135329" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1590719950864">
+    <state width="1493" height="269" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590744330235" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1590721428177">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590719950864" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590719125082">
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590721428177" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590721473403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590719125082" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590721473403" />
     <state x="573" y="281" key="classpath-attribute-editor" timestamp="1590719433322">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="573" y="281" key="classpath-attribute-editor/0.0.1536.824@0.0.1536.824" timestamp="1590719433322" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590719166107">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590740387614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590719166107" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590740387614" />
     <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590716746279">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -129,4 +129,7 @@ public class Person {
         return Objects.hash(name, birthday, eyeColor, hairColor);
     }
 
+    public String getName() {
+        return name;
+    }
 }

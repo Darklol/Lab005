@@ -220,9 +220,34 @@ public class Receiver {
         Gson gson = new Gson();
         Type collectionType = new TypeToken<Hashtable<Long, Dragon>>() {
         }.getType();
-        collection = gson.fromJson(strFileContents, collectionType);}
+        //проверка правильности введённых значений
+        Hashtable<Long,Dragon> temp =  gson.fromJson(strFileContents, collectionType);
+        Set<Long> keySet = temp.keySet();
+        Set<Long> remove = new TreeSet<>();
+        for (Long key : keySet){
+            if ((key <= 0) || (!key.equals(temp.get(key).getId())) ||
+                    (temp.get(key).getCoordinates().getY() < -324) || (temp.get(key).getCoordinates() == null) ||
+                    (temp.get(key).getName().equals("")) || (temp.get(key).getDescription() == null)||
+                    (temp.get(key).getAge() != null && temp.get(key).getAge()<0) ||
+                    (temp.get(key).getWingspan() != null && temp.get(key).getWingspan()<0) ||
+                    (temp.get(key).getCreationDate() == null) || (temp.get(key).getColor() == null) ||
+                    (temp.get(key).getKiller().getName().equals(""))){
+
+                remove.add(key);
+            }
+        }
+        if (!remove.isEmpty()){
+            System.out.println("Внимание! Обнаружено неверное значение в поле элемента коллекции, " +
+                    "все элемены с неправильными значениями будут удалены.");
+            for (Long key : remove){
+                temp.remove(key);
+            }
+        }
+        collection = temp;}
         else {
-            System.out.println("файл пуст.");
+            System.out.println("Коллекция не была загружена.\n" +
+                    "Файл пуст. \n\n" +
+                    "Запуск программы без данных из файла.");
         }
     }
 

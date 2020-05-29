@@ -103,15 +103,7 @@ public class Dragon {
         System.out.println();
         this.setCreationDate();
         System.out.println("Введите описание дракона: ");
-        wrongInput = true;
-        while (wrongInput) {
-            description = sc.nextLine();
-            if (!description.equals("")) {
-                wrongInput = false;
-            } else {
-                System.out.println("Поле не может быть пустым! Попробуйте ещё раз.");
-            }
-        }
+        description = sc.nextLine();
         System.out.println();
         System.out.println("Введите размах крыльев дракона:");
         wrongInput = true;
