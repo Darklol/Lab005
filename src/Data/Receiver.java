@@ -20,7 +20,7 @@ public class Receiver {
 
     /**
      * Стандартный конструктор
-     * Инициализирует коллекцию и устанавливает её дату создания
+     * инициализирует коллекцию и выставляет дату
      */
     public Receiver() {
         setInitializationDate();
@@ -47,7 +47,7 @@ public class Receiver {
      * Метод для реализации команды info
      */
     public void info() {
-        System.out.println("Информация о коллекции:");
+        System.out.println("информация о коллекции: ");
         System.out.println("Коллекция типа: Hashtable");
         System.out.println("Дата инициализации: " + getInitializationDate());
         System.out.println("Количество элементов: " + collection.size() + "\n");

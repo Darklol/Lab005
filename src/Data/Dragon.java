@@ -25,7 +25,7 @@ public class Dragon {
     public String toString() {
         return "Дракон \n" +
                 "id: " + id + "\n" +
-                "Имя: " + name + "\n" +
+                "имя: " + name + "\n" +
                 "Координаты:" + coordinates + "\n" +
                 "Дата создания:" + creationDate + "\n" +
                 "Возраст:" + age + "\n" +
