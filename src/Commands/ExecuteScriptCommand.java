@@ -4,6 +4,9 @@ import Data.Receiver;
 
 import java.io.IOException;
 
+/**
+ * Команда execute
+ */
 public class ExecuteScriptCommand extends Command{
     public ExecuteScriptCommand(Receiver receiver) {
         super(receiver);

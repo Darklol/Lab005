@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда help
+ */
 public class HelpCommand extends Command {
     public HelpCommand(Receiver receiver) {
         super(receiver);

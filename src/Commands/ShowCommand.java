@@ -1,7 +1,9 @@
 package Commands;
 
 import Data.Receiver;
-
+/**
+ *  Команда show
+ */
 public class ShowCommand extends Command {
 
     public ShowCommand(Receiver receiver) {

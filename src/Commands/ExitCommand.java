@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда exit
+ */
 public class ExitCommand extends Command {
 
     public ExitCommand(Receiver receiver) {

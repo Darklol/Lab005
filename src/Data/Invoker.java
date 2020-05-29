@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * Класс, вызывающий команды и производящий логирование (TBD)
+ * По паттерну "команда"
+ * Класс, вызывающий команды
  */
 public class Invoker {
 
@@ -14,6 +15,10 @@ public class Invoker {
     private Receiver receiver;
     private HashMap<String,Command> commandsName = new HashMap<String,Command>();
 
+    /**
+     * стандартный конструктор, устанавливающий экземпляр ресивера и инициализирующий коллекцию команд
+     * @param receiver
+     */
     public Invoker(Receiver receiver){
         this.receiver = receiver;
         addCommandsNames();
@@ -27,7 +32,7 @@ public class Invoker {
     };
 
     /**
-     * Метод, отвечающий вызывающий команду, соответсвующую пользовательскому вводу
+     * Метод, вызывающий команду, соответсвующую пользовательскому вводу
      */
     public void input(){
         System.out.println("Введите команду:");
@@ -59,6 +64,10 @@ public class Invoker {
 
     }
 
+    /**
+     * Метод, инициализирующий коллекцию HashMap, с ключом - командой в строковом представлении,
+     * и со значением - экземпляр команды
+     */
     private void addCommandsNames(){
         commandsName.put(new HelpCommand(receiver).commandName(), new HelpCommand(receiver));
         commandsName.put(new InfoCommand(receiver).commandName(),new InfoCommand(receiver));

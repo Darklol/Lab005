@@ -1,5 +1,8 @@
 package Data;
 
+/**
+ * Type Coordinates Class
+ */
 public class Coordinates {
     private long x;
     private Long y; //Значение поля должно быть больше -324, Поле не может быть null

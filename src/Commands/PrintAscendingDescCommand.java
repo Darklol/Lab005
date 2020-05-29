@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда print_field_ascending_description
+ */
 public class PrintAscendingDescCommand extends Command {
 
     public PrintAscendingDescCommand(Receiver receiver) {

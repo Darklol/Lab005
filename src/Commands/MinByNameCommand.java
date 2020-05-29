@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда min_by_name
+ */
 public class MinByNameCommand extends Command {
 
     public MinByNameCommand(Receiver receiver) {

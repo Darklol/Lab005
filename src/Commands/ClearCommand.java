@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда clear
+ */
 public class ClearCommand extends Command {
 
     public ClearCommand(Receiver receiver) {

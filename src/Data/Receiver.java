@@ -11,13 +11,17 @@ import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
- * Класс, который знает как исполнить каждую команду
+ * По шаблону "команда", Ресивер - это класс, который содержит в себе методы для исполнения каждой команды
  */
 public class Receiver {
 
     private Hashtable<Long, Dragon> collection;
     private ZonedDateTime initializationDate;
 
+    /**
+     * Стандартный конструктор
+     * Инициализирует коллекцию и устанавливает её дату создания
+     */
     public Receiver() {
         setInitializationDate();
         collection = new Hashtable<Long, Dragon>();
@@ -175,7 +179,6 @@ public class Receiver {
         Iterator<Long> iterator = set.iterator();
         for (int i = 0; i < set.size(); i++) {
             String temp = gson.toJson(collection.get(iterator.next()));
-            temp = temp.replaceAll("\\{", "$0\n\t\t");
             list.add(temp);
         }
         Iterator<Long> newIterator = set.iterator();
@@ -198,6 +201,12 @@ public class Receiver {
         else { System.out.println("Запись пустой коллекции в файл невозможна");}
     }
 
+    /**
+     * Метод для считывания коллекции из файла
+     * @param path
+     * @throws IOException
+     * @throws JsonSyntaxException
+     */
     public void getFile(String path) throws IOException, JsonSyntaxException {
         StringBuilder string = new StringBuilder();
         BufferedInputStream stream = new BufferedInputStream(new FileInputStream(new File(path)));
@@ -219,6 +228,8 @@ public class Receiver {
 
     /**
      * Метод для реализации команды execute_script
+     * @param path
+     * @throws IOException
      */
     public void executeScript(String path) throws IOException {
         BufferedInputStream stream = new BufferedInputStream(new FileInputStream(new File(path)));
@@ -253,6 +264,7 @@ public class Receiver {
 
     /**
      * Метод для реализации команды remove_if_greater
+     * @param id
      */
     public void removeGreater(Long id) {
         if (collection.containsKey(id) && !collection.isEmpty() && (id > 0)) {
@@ -402,10 +414,14 @@ public class Receiver {
     /**
      * Getters and setters
      */
+
     public ZonedDateTime getInitializationDate() {
         return initializationDate;
     }
 
+    /**
+     * Устанавливает дату инициализации на текущее время
+     */
     public void setInitializationDate() {
         this.initializationDate = ZonedDateTime.now();
     }

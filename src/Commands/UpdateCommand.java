@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда update
+ */
 public class UpdateCommand extends Command {
 
     public UpdateCommand(Receiver receiver) {

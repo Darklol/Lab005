@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда remove_key
+ */
 public class RemoveKeyCommand extends Command {
 
     public RemoveKeyCommand(Receiver receiver){

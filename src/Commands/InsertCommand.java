@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда insert
+ */
 public class InsertCommand extends Command {
 
     public InsertCommand(Receiver receiver) {

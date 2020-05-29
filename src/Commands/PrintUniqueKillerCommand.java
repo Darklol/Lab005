@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда print_unique_killer
+ */
 public class PrintUniqueKillerCommand extends Command {
 
     public PrintUniqueKillerCommand(Receiver receiver) {

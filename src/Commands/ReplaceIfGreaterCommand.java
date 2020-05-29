@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда replace_if_greater
+ */
 public class ReplaceIfGreaterCommand extends Command {
 
     public ReplaceIfGreaterCommand(Receiver receiver) {

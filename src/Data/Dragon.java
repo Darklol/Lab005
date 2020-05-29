@@ -3,6 +3,9 @@ package Data;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+/**
+ * класс Dragon, элементы этого класса наполняют коллекцию
+ */
 public class Dragon {
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -14,6 +17,10 @@ public class Dragon {
     private Color color; //Поле не может быть null
     private Person killer; //Поле может быть null
 
+    /**
+     * Более читабельный вид toString()
+     * @return
+     */
     @Override
     public String toString() {
         return "Дракон \n" +
@@ -28,22 +35,11 @@ public class Dragon {
                 "Убийца:" + killer + "\n";
     }
 
-
-//    @Override
-//    public String toString() {
-//        return "Dragon{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", coordinates=" + coordinates +
-//                ", creationDate=" + creationDate +
-//                ", age=" + age +
-//                ", description='" + description + '\'' +
-//                ", wingspan=" + wingspan +
-//                ", color=" + color +
-//                ", killer=" + killer +
-//                '}';
-//    }
-
+    /**
+     * Конструктор, в котором вводятся значения полей с клавиатуры.
+     * Тут же происходит проверка правильности значений.
+     * @param id
+     */
     public Dragon(long id) {
         boolean wrongInput = true;
         this.id = id;
@@ -163,7 +159,7 @@ public class Dragon {
                 if (temp.trim().equals("no")) {
                     wrongInput = false;
                 } else {
-                    System.out.println("Ошибка ввода! Пожалуйста, введите yes или no");
+                    System.out.println("Ошибка ввода! Пожалуйста, введите yes или no)");
                 }
             }
         }
@@ -202,6 +198,10 @@ public class Dragon {
         return color;
     }
 
+    /**
+     * Метод, который генерирует значение, по которому сравниваются драконы
+     * @return
+     */
     public long makeValue() {
         return (id + 42) / id;
     }
@@ -214,6 +214,9 @@ public class Dragon {
         this.name = name;
     }
 
+    /**
+     * Устанавливает дату создания дракона на текущую
+     */
     public void setCreationDate() {
         this.creationDate = LocalDate.now();
     }

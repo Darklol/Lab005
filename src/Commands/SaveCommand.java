@@ -4,6 +4,9 @@ import Data.Receiver;
 
 import java.io.IOException;
 
+/**
+ *  Команда save
+ */
 public class SaveCommand extends Command{
     public SaveCommand(Receiver receiver) {
         super(receiver);

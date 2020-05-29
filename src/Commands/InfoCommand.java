@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда info
+ */
 public class InfoCommand extends Command {
 
     public InfoCommand(Receiver receiver) {

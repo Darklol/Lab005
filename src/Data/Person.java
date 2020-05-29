@@ -1,20 +1,29 @@
 package Data;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * Type Person Class
+ */
 public class Person {
     private String name; //Поле не может быть null, Строка не может быть пустой
     private java.util.Date birthday; //Поле может быть null
     private Color eyeColor; //Поле может быть null
     private Color hairColor; //Поле может быть null
 
-
+    /**
+     * Пустой конструктор, нужен для корректного считывания коллекции из файла (костыль)
+     */
     public Person(){};
+
+    /**
+     * Стандартный конструктор, который вызывается в конструкторе класса Dragon
+     * @param string
+     */
     public Person(String string) {
         boolean wrongInput = true;
         Scanner sc = new Scanner(System.in);
@@ -99,6 +108,11 @@ public class Person {
                 '}';
     }
 
+    /**
+     * Переопределение метода Equals для грамотного сравнения экземпляров
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -115,8 +129,4 @@ public class Person {
         return Objects.hash(name, birthday, eyeColor, hairColor);
     }
 
-    public Date getBirthday() {
-        System.out.println(birthday);
-        return birthday;
-    }
 }

@@ -2,6 +2,9 @@ package Commands;
 
 import Data.Receiver;
 
+/**
+ *  Команда remove_if_greater
+ */
 public class RemoveGreaterCommand extends Command {
 
     public RemoveGreaterCommand(Receiver receiver){
