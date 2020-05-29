@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="Lab005:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Lab005_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Lab005.jar">
+        <element id="module-output" name="Lab005" />
+      </element>
+      <element id="library" level="application" name="com.google.code.gson:gson:2.8.6" />
+    </root>
+  </artifact>
+</component>
