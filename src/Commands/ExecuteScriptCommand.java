@@ -2,9 +2,10 @@ package Commands;
 
 import Data.Receiver;
 
-public class InsertCommand extends Command {
+import java.io.IOException;
 
-    public InsertCommand(Receiver receiver) {
+public class ExecuteScriptCommand extends Command{
+    public ExecuteScriptCommand(Receiver receiver) {
         super(receiver);
     }
 
@@ -16,7 +17,11 @@ public class InsertCommand extends Command {
                         "(Требуется: " + needArguments() + ").\nВсе остальные аргументы будут проигнорированы.");
             }
             try {
-                receiver.insert(Long.parseLong(arguments[0]));
+                try {
+                    receiver.executeScript(arguments[0]);
+                } catch (IOException e) {
+                    System.out.println("Файл не найден!");
+                }
             } catch (IllegalArgumentException e) {
                 System.out.println("Неправильный ввод аргумента!");
             }
@@ -33,13 +38,14 @@ public class InsertCommand extends Command {
 
     @Override
     public String manual() {
-        return "Добавить новый элемент с заданным ключом.";
+        return "Считать и исполнить скрипт из указанного файла.";
     }
 
     @Override
     public String commandName() {
-        return "insert";
+        return "execute_script";
     }
 
 
 }
+

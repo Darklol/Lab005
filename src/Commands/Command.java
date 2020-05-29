@@ -2,8 +2,6 @@ package Commands;
 
 import Data.Receiver;
 
-import java.util.Scanner;
-
 public abstract class Command {
     /**
      * абстрактный класс команды

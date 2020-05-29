@@ -1,7 +1,6 @@
 package Data;
 
 import java.time.LocalDate;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Dragon {
@@ -159,7 +158,7 @@ public class Dragon {
             if (temp.trim().equals("yes")) {
                 wrongInput = false;
                 System.out.println("Введите данные убийцы дракона");
-                killer = new Person();
+                killer = new Person("string");
             } else {
                 if (temp.trim().equals("no")) {
                     wrongInput = false;

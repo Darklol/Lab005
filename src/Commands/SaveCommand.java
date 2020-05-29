@@ -2,9 +2,10 @@ package Commands;
 
 import Data.Receiver;
 
-public class InsertCommand extends Command {
+import java.io.IOException;
 
-    public InsertCommand(Receiver receiver) {
+public class SaveCommand extends Command{
+    public SaveCommand(Receiver receiver) {
         super(receiver);
     }
 
@@ -16,9 +17,13 @@ public class InsertCommand extends Command {
                         "(Требуется: " + needArguments() + ").\nВсе остальные аргументы будут проигнорированы.");
             }
             try {
-                receiver.insert(Long.parseLong(arguments[0]));
+                try {
+                    receiver.save();
+                } catch (IOException e) {
+                    System.out.println("Не удалось создать файл. Возможно, не хватает прав на запись в директории.");
+                }
             } catch (IllegalArgumentException e) {
-                System.out.println("Неправильный ввод аргумента!");
+                System.out.println("Коллекция повреждена! Сохранение невозможно.");
             }
         } else {
             System.out.println("Недостаточно аргументов для выполнения команды! " +
@@ -28,18 +33,16 @@ public class InsertCommand extends Command {
 
     @Override
     public int needArguments() {
-        return 1;
+        return 0;
     }
 
     @Override
     public String manual() {
-        return "Добавить новый элемент с заданным ключом.";
+        return "Сохранить коллекцию в файл.";
     }
 
     @Override
     public String commandName() {
-        return "insert";
+        return "save";
     }
-
-
 }

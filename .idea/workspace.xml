@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="894ad3b6-323a-439c-87b2-5d7ef986f688" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/input.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Commands/SaveCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/111testgson.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gson.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/InsertCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands/InsertCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Invoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Receiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testgson.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +55,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -53,6 +65,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lab005" />
       <recent name="C:\Projects\Lab005\Files" />
       <recent name="C:\Projects\Lab005\src" />
     </key>
@@ -61,7 +74,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Lab005" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Projects\Lab005\input.json" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -107,7 +120,8 @@
       <workItem from="1590644740964" duration="2415000" />
       <workItem from="1590647713677" duration="6282000" />
       <workItem from="1590655744495" duration="11518000" />
-      <workItem from="1590682562909" duration="19788000" />
+      <workItem from="1590682562909" duration="28942000" />
+      <workItem from="1590713897174" duration="2683000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1589308146639</created>
@@ -214,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590695296963</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="BFC is ready!&#10;&#10;(BFC - Big Fucking Constructor)">
+      <created>1590704878303</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1590704878303</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,49 +270,54 @@
     <MESSAGE value="better save" />
     <MESSAGE value="Invoker input method working&#10;&#10;added 1 command" />
     <MESSAGE value="almost all commands added" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost all commands added" />
+    <MESSAGE value="BFC is ready!&#10;&#10;(BFC - Big Fucking Constructor)" />
+    <option name="LAST_COMMIT_MESSAGE" value="BFC is ready!&#10;&#10;(BFC - Big Fucking Constructor)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="73" key="#Deployment" timestamp="1589355908919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="722" y="73" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1589355908919" />
-    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589909045189">
+    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590711043526">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589909045189" />
+    <state x="447" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1590711043526" />
     <state x="898" y="217" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589356764957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="898" y="217" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589356764957" />
-    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1590690159367">
+    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser" timestamp="1590711312553">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590690159367" />
-    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590695295503">
+    <state x="874" y="155" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590711312553" />
+    <state x="762" y="0" key="CommitChangelistDialog2" timestamp="1590704874837">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590695295503" />
+    <state x="762" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590704874837" />
     <state x="473" y="153" key="FileChooserDialogImpl" timestamp="1590517854972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="473" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590517854972" />
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1590704716495">
+    <state x="427" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1590710660212">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590704716495" />
-    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1590704716494">
+    <state x="427" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1536.824@0.0.1536.824" timestamp="1590710660212" />
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom" timestamp="1590716502745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590704716494" />
-    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1590704716494">
+    <state width="1493" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590716502745" />
+    <state width="1493" height="143" key="GridCell.Tab.0.center" timestamp="1590716502745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590704716494" />
-    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1590704716495">
+    <state width="1493" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590716502745" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left" timestamp="1590716502745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590704716495" />
+    <state width="1493" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590716502745" />
+    <state width="1493" height="143" key="GridCell.Tab.0.right" timestamp="1590716502745">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590716502745" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1590604933934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -300,10 +326,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590695304171" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590682562563">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590713898209">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590682562563" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590713898209" />
     <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590565496439">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

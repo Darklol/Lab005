@@ -1,5 +1,6 @@
 package Data;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,7 +13,9 @@ public class Person {
     private Color eyeColor; //Поле может быть null
     private Color hairColor; //Поле может быть null
 
-    public Person() {
+
+    public Person(){};
+    public Person(String string) {
         boolean wrongInput = true;
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите имя человека:");
@@ -29,16 +32,18 @@ public class Person {
         wrongInput = true;
         while (wrongInput) {
             String temp = sc.nextLine();
-            String[] tempArray = temp.split("-");
-
-
+            if (temp.equals("")){
+                wrongInput = false;
+                break;
+            }
+//            String[] tempArray = temp.split("-");
             try {
-                if (tempArray.length == 3) {
-                    if (Integer.parseInt(tempArray[0]) < 31 && Integer.parseInt(tempArray[1]) < 13) {
+//                if (tempArray.length == 3) {
+//                    if (Integer.parseInt(tempArray[0]) < 31 && Integer.parseInt(tempArray[1]) < 13) {
                         birthday = new SimpleDateFormat("dd-MM-yyyy").parse(temp);
                         wrongInput = false;
-                    } else System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
-                } else System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
+//                    } else System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
+//                } else System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
             } catch (ParseException | NumberFormatException e) {
                 System.out.println("Неверный формат даты! Попробуйте ввести ещё раз. Формат даты: dd-mm-yyyy");
             }
@@ -108,5 +113,10 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(name, birthday, eyeColor, hairColor);
+    }
+
+    public Date getBirthday() {
+        System.out.println(birthday);
+        return birthday;
     }
 }
