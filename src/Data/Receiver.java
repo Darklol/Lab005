@@ -417,15 +417,24 @@ public class Receiver {
     public void printUniqueKiller() {
         if (!collection.isEmpty()) {
             List<Dragon> list = Collections.list(collection.elements());
-            Set<Person> set = new HashSet<Person>();
+            List<Person> arrayList = new ArrayList<>();
+            Set<Person> removedPersons = new HashSet<>();
             for (Dragon dragon : list) {
                 if (dragon.getKiller() != null) {
-                    set.add(dragon.getKiller());
+                    if (arrayList.contains(dragon.getKiller()) || removedPersons.contains(dragon.getKiller())) {
+                        arrayList.remove(dragon.getKiller());
+                        removedPersons.add(dragon.getKiller());
+                    } else {
+                        arrayList.add(dragon.getKiller());
+                    }
+
                 }
             }
-            Iterator<Person> iterator = set.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next().toString());
+            for (Person person : arrayList) {
+                System.out.println(person.toString());
+            }
+            if (arrayList.isEmpty()){
+                System.out.println("Нет уникальных значений");
             }
         } else {
             System.out.println("Коллекция пуста! Добавьте элементы в коллекцию чтобы продолжить.");
