@@ -448,10 +448,14 @@ public class Receiver {
      */
     public void printFieldAscendDesc() {
         if (!collection.isEmpty()) {
-            SortedSet<Long> sortedSet = new TreeSet<>(collection.keySet());
+            Set<Long> keySet = collection.keySet();
+            Set<String> sortedSet = new TreeSet<>();
             System.out.println("Вывод полей description всех драконов в коллекции в порядке возрастания:");
-            for (Long key : sortedSet) {
-                System.out.println("Поле description дракона с ID: " + key + ": " + collection.get(key).getDescription());
+            for (Long key : keySet) {
+                sortedSet.add(collection.get(key).getDescription());
+            }
+            for (String description : sortedSet) {
+                System.out.println(description);
             }
         } else {
             System.out.println("Коллекция пуста! Добавьте элементы в коллекцию чтобы продолжить.");
